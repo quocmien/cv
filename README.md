@@ -74,4 +74,4 @@ Detail-oriented and versatile web developer with expertise in HTML, CSS, and Jav
 ## Contact
 - **Email:** quocmienn@gmail.com
 - **LinkedIn:** [Quoc Mien](https://www.linkedin.com/in/quốc-miên-nguyễn-43859221a)
-- **GitHub:** [example](https://github.com/quocmien)
+- **GitHub:** [quocmien](https://github.com/quocmien)
