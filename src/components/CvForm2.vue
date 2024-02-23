@@ -114,6 +114,9 @@ export default {
             </a>
         `},
         {icon: 'fa-solid fa-location-dot', link:'Cần Thơ, Việt Nam'},
+        {icon: 'fa-solid fa-globe', link:`<a class="text-blue-500" target="_blank" href="https://cv-webdeveloper.web.app/">
+            https://cv-webdeveloper.web.app/
+            </a>`},
     ])
 
     const skills = ref([
@@ -127,6 +130,7 @@ export default {
         {name: 'Tailwind/Bootstrap', value: 'width: 75%'},
         {name: 'Git/Gitlad', value: 'width: 60%'},
         {name: 'Nodejs', value: 'width: 60%'},
+        {name: 'Firebase', value: 'width: 50%'}
     ])
 
     const officers = ref([
@@ -287,15 +291,6 @@ export default {
     align-items: center;
     min-height: 100vh;
     background-color: #f5f5f5;
-}
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 100px;
-    min-height: 1000px;
-    background-color: #fff;
-    margin: 50px;
-    box-shadow: 0 35px 55px rgba(0,0,0,0.1);
 }
 .top {
     position: relative;

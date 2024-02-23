@@ -107,6 +107,10 @@ export default {
             title: 'facebook.com/', 
             className: 'fa-brands fa-facebook-f my-[20px]'
         },
+        {
+            title: 'https://cv-webdeveloper.web.app/',
+            className: 'fa-solid fa-globe text-2xl'
+        }
     ])
 
     const details = ref([
