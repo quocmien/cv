@@ -1,3 +1,28 @@
+# cv
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
 # Personal Profile
 
 ## Personal Information
@@ -44,6 +69,3 @@ I am a frontend developer seeking opportunities to further develop my skills and
 - **Email:** example@gmail.com
 - **LinkedIn:** [John Doe](https://www.linkedin.com/in/johndoe)
 - **GitHub:** [example](https://github.com/example)
-
-
-
