@@ -50,12 +50,12 @@ Detail-oriented and versatile web developer with expertise in HTML, CSS, and Jav
 ### 2. Car House Rental Website
 - **Description:** This platform serves as a user-friendly solution for individuals to register accounts and browse rental properties and vehicles. Leveraging Next.js and the Google Maps API, users can conveniently search for rental accommodations and vehicles, enabling seamless navigation and exploration of available options. With its intuitive interface and advanced technology integration, this website enhances the rental experience, offering users a comprehensive and efficient platform for finding and renting properties and vehicles.
 - **Technologies Used:** Next.js, Tailwind CSS, GitHub Pages, Google Map API
-- **Link:** [Minarental Website](http://staydrivefinder.com/)
+- **Link:** [Car House Rental Website](http://staydrivefinder.com/)
 
 ### 3. Studily
 - **Description:** The landing page for the Presale Token and NFT Timeline Project, built with Next.js and Web3 technology, serves as a centralized hub for tracking the project's journey. Through an intuitive timeline interface, visitors can explore key milestones, presale events, and NFT releases, providing transparency and engagement within the Web3 community..
 - **Technologies Used:** Next.js, Tailwind CSS, GitHub Pages, Web 3
-- **Link:** [Minarental Website](https://beta.studily.io/)
+- **Link:** [Studily Website](https://beta.studily.io/)
 
 ## Education
 - **University:** Tay Do University (2020 - 2024)
