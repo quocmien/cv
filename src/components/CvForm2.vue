@@ -27,7 +27,7 @@
                                 <i :class="item.icon"></i>
                             </span>
                             <span class="text-[0.8em] lg:text-[1em]">
-                                {{ item.text }}
+                                <span v-html="item.link"></span>
                             </span>
                         </li>
                     </ul>
@@ -53,9 +53,11 @@
                             <div class="officer_groupBx relative grid grid-cols-4">
                                 <p class="col-span-1 font-semibold text-[0.8em] lg:text-[1.1em]">{{ item.timeline }}</p>
                                 <div class="value col-span-3">
-                                    <b class="font-bold text-[#231fbf] text-[0.9em] lg:text-[1.2em]">{{ item.location }}</b>
+                                    <b class="font-bold text-[#231fbf] text-[1em] lg:text-[1.4em]"> {{ item.location }}</b>
+                                    <p class="font-bold text-black text-[0.9em] lg:text-[1.2em]">{{ item.nameProject }}</p>
+                                    <p class="font-bold text-black text-[0.8em] lg:text-[1em]">{{ item.major }}</p>
                                     <p class="font-medium text-[0.7em] lg:text-[1.1em]">
-                                        {{ item.des }}
+                                        <span v-html="item.des"></span>
                                     </p>
                                 </div>
                             </div>
@@ -63,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hobbies pt-0 px-[50px] pb-[50px]">
+            <!-- <div class="hobbies pt-0 px-[50px] pb-[50px]">
                 <h4 class="inline uppercase text-[1.1em] tracking-[0.25em] text-white bg-[#231fbf] py-0 px-[15px] font-semibold mt-[40px]">
                         Hobbies
                 </h4>
@@ -75,7 +77,7 @@
                         </p>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -91,27 +93,40 @@ export default {
   setup() {
     const cvInfos = ref([
         {
-            name: 'Nguyen Quoc Mien',
-            major: 'Developer',
-            des: 'aaaaaaaaaa'
+            name: 'Nguyễn Quốc Miên',
+            major: 'Web Developer',
+            des: 'Detail-oriented and versatile web developer with expertise in HTML, CSS, and JavaScript, along with proficiency in Vue.js and Tailwind CSS. Experienced in version control with Git and knowledgeable in backend development using Node.js. Possessing a solid understanding of frontend frameworks like React and Nuxt.js,Next.js as well as PHP framework Laravel. Skilled in creating responsive and visually appealing web applications while adhering to best coding practices and project deadlines. Passionate about learning new technologies and continuously improving skills to deliver high-quality solution'
         }
     ])
 
     const items = ref([
-        {icon: 'fa-solid fa-phone', text:'+84 393 136 496'},
-        {icon: 'fa-solid fa-envelope', text:'quocmienn@gmail.com'},
-        {icon: 'fa-solid fa-globe', text:'www.mywebside.com'},
-        {icon: 'fa-brands fa-linkedin', text:'www.linkedin.com'},
-        {icon: 'fa-solid fa-location-dot', text:'Can Tho'},
+        {icon: 'fa-solid fa-phone', link:'+84 393 136 496'},
+        {icon: 'fa-solid fa-envelope', link:'quocmienn@gmail.com'},
+        {icon: 'fa-brands fa-github', link:`
+            <a class="text-blue-500" target="_blank" href="https://github.com/quocmien">
+                https://github.com/quocmien
+            </a>
+        
+        `},
+        {icon: 'fa-brands fa-linkedin', link:`
+            <a class="text-blue-500" target="_blank" href="https://www.linkedin.com/in/quốc-miên-nguyễn-43859221a">
+                https://www.linkedin.com/in/quốc-miên-nguyễn-43859221a
+            </a>
+        `},
+        {icon: 'fa-solid fa-location-dot', link:'Cần Thơ, Việt Nam'},
     ])
 
     const skills = ref([
-        {name: 'Html', value: 'width: 45%'},
-        {name: 'Css', value: 'width: 45%'},
-        {name: 'Javascript', value: 'width: 45%'},
-        {name: 'ReactJS', value: 'width: 45%'},
-        {name: 'Figma', value: 'width: 45%'},
-        {name: 'Photoshop', value: 'width: 45%'},
+        {name: 'Html', value: 'width: 90%'},
+        {name: 'Css,Css', value: 'width: 70%'},
+        {name: 'Javascript', value: 'width: 70%'},
+        {name: 'ReactJS', value: 'width: 55%'},
+        {name: 'Vue/Nuxt', value: 'width: 70%'},
+        {name: 'NextJs', value: 'width: 55%'},
+        {name: 'Figma', value: 'width: 70%'},
+        {name: 'Tailwind/Bootstrap', value: 'width: 75%'},
+        {name: 'Git/Gitlad', value: 'width: 60%'},
+        {name: 'Nodejs', value: 'width: 60%'},
     ])
 
     const officers = ref([
@@ -121,14 +136,8 @@ export default {
                 {
                     timeline: '2020-2024',
                     location: 'Tay Do University',
-                    des: '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nobis minus ut saepe expedita dolores ducimus necessitatibus, dicta ad, adipisci voluptas quae assumenda nemo vitae sint itaque doloremque, aliquid neque.'
+                    des: 'Passionate and driven individual pursuing a career in web development, with a focus on creating dynamic and user-friendly websites. Committed to staying updated with the latest technologies and continuously learning to enhance skills and contribute effectively to the ever-evolving field of web development.'
                 },
-
-                {
-                    timeline: '2020-2024',
-                    location: 'Tay Do University',
-                    des: '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nobis minus ut saepe expedita dolores ducimus necessitatibus, dicta ad, adipisci voluptas quae assumenda nemo vitae sint itaque doloremque, aliquid neque.'
-                }
             ]
         },
 
@@ -136,21 +145,98 @@ export default {
             name: 'Work experience',
             items: [
                 {
-                    timeline: '2020-2024',
-                    location: 'Tes solution',
-                    des: '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nobis minus ut saepe expedita dolores ducimus necessitatibus, dicta ad, adipisci voluptas quae assumenda nemo vitae sint itaque doloremque, aliquid neque.'
+                    timeline: '2022-2023',
+                    location: 'Tes Solution',
+                    nameProject: '1. Minarental',
+                    major: 'Web Developer',
+                    des: `
+                    Minarental is a project utilizing Vue.js technology and the Google Excel API to display a list of rented vehicles. This platform allows users to easily access and view information about available rental vehicles through data stored in Google Excel. It provides a convenient and flexible vehicle rental experience for users, enabling them to quickly search for and book vehicles. 
+                    <br/>
+                    <br/>
+                    <b>Technical:</b> 
+                        <a class="text-blue-500" target="_blank" href="https://vuejs.org/">
+                            VueJs,
+                        </a>
+                        <a class="text-blue-500" target="_blank" href="https://developers.google.com/sheets/api/guides/concepts">
+                            Google Excel API
+                        </a>
+                    <br/>
+                    <br/>
+                    <i class="fa-brands fa-github text-2xl"></i> 
+                    <b>Github:</b>
+                    <a class="text-blue-500" target="_blank" href="https://github.com/quocmien/Minarental">
+                        Minarental
+                    </a>
+                    <br/>
+                    <i class="fa-solid fa-globe text-2xl"></i> 
+                    <b>Wibsite:</b>
+                    <a class="text-blue-500" target="_blank" href="https://minarental.com/teamsan">
+                        Minarental
+                    </a>
+                    `
                 },
                 
                 {
-                    timeline: '2020-2024',
-                    location: 'Tay Do University',
-                    des: '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nobis minus ut saepe expedita dolores ducimus necessitatibus, dicta ad, adipisci voluptas quae assumenda nemo vitae sint itaque doloremque, aliquid neque.'
+                    timeline: '2023-2024',
+                    nameProject: '2. Car House Rental',
+                    major: 'Web Developer',
+                    des: `
+                    This platform serves as a user-friendly solution for individuals to register accounts and browse rental properties and vehicles. Leveraging Next.js and the Google Maps API, users can conveniently search for rental accommodations and vehicles, enabling seamless navigation and exploration of available options. With its intuitive interface and advanced technology integration, this website enhances the rental experience, offering users a comprehensive and efficient platform for finding and renting properties and vehicles.
+                    <br/>
+                    <br/>
+                    <b>Technical:</b> 
+                        <a class="text-blue-500" target="_blank" href="https://nextjs.org/">
+                            NextJs,
+                        </a>
+                        <a class="text-blue-500" target="_blank" href="https://developers.google.com/maps/documentation/javascript">
+                            Google Map API
+                        </a>
+                    <br/>
+                    <br/>
+                    <i class="fa-brands fa-github text-2xl"></i> 
+                    <b>Github:</b>
+                    <a class="text-blue-500" target="_blank" href="https://github.com/quocmien/Car-House-Rental">
+                        Car House Rental
+                    </a>
+                    <br/>
+                    <i class="fa-solid fa-globe text-2xl"></i> 
+                    <b>Wibsite:</b>
+                    <a class="text-blue-500" target="_blank" href="http://staydrivefinder.com/">
+                        Car House Rental
+                    </a>
+                    `
                 },
+
                 {
-                    timeline: '2020-2024',
-                    location: 'Tay Do University',
-                    des: '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nobis minus ut saepe expedita dolores ducimus necessitatibus, dicta ad, adipisci voluptas quae assumenda nemo vitae sint itaque doloremque, aliquid neque.'
-                }
+                    timeline: '2023-2024',
+                    nameProject: '3. Studily',
+                    major: 'Front End',
+                    des: `
+                    The landing page for the Presale Token and NFT Timeline Project, built with Next.js and Web3 technology, serves as a centralized hub for tracking the project's journey. Through an intuitive timeline interface, visitors can explore key milestones, presale events, and NFT releases, providing transparency and engagement within the Web3 community.
+                    <br/>
+                    <br/>
+                    <b>Technical:</b> 
+                        <a class="text-blue-500" target="_blank" href="https://nextjs.org/">
+                            NextJs,
+                        </a>
+                        <a class="text-blue-500" target="_blank" href="https://web3js.readthedocs.io/en/v1.10.0/">
+                            Web 3
+                        </a>
+                    <br/>
+                    <br/>
+                    <i class="fa-brands fa-github text-2xl"></i> 
+                    <b>Github:</b>
+                    <a class="text-blue-500" target="_blank" href="https://github.com/quocmien/Studily">
+                        Studily
+                    </a>
+                    <br/>
+                    <i class="fa-solid fa-globe text-2xl"></i> 
+                    <b>Wibsite:</b>
+                    <a class="text-blue-500" target="_blank" href="https://beta.studily.io/">
+                        Studily
+                    </a>
+                    `
+                },
             ]
         },
     ])
